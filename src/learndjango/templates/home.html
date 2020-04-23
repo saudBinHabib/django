@@ -7,5 +7,16 @@
 
     {{my_text}}
     <h1>{{ my_number}}</h1>
+    <p>{{my_list}}</p>
+    <ul>
+    {% for sub_item in my_list %}
+        {% if forloop.counter == 2 %}
+            <li> {{forloop.counter}} - {{sub_item|add:36}} </li>
+        {% else %}
+            <li> {{forloop.counter}} - {{sub_item}} </li>
+        {% endif %}
+
+    {% endfor %}
+    </ul>
     <p>This page is all about home page.</p>
 {% endblock %}
