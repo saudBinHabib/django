@@ -3,6 +3,9 @@
 {% block content %}
     <h1> Welcome to Home Page</h1>
 
-    {{request.user.is_authenticated}}
+    <!-- {{request.user.is_authenticated}} -->
+
+    {{my_text}}
+    <h1>{{ my_number}}</h1>
     <p>This page is all about home page.</p>
 {% endblock %}
