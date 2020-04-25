@@ -1,10 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.http import Http404
 from .models import Products
 from .forms import ProductForm, RawProductForm
 
 
 def dynamic_product_lookup(request, my_id):
-    obj = Products.objects.get(id=my_id)
+    # obj = Products.objects.get(id=my_id)
+    # if the value not found it can give you 404 error.
+    obj = get_object_or_404(Products, id=my_id)
+
+    # or you can use try and catch to check that the page exist or not.
+    # try:
+    #     obj = Products.objects.get(id=my_id)
+    # except Products.DoesNotExist:
+    #     raise Http404
     context = {
         'object': obj
     }
