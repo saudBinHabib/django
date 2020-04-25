@@ -4,6 +4,14 @@ from .models import Products
 from .forms import ProductForm, RawProductForm
 
 
+def all_product_detail_view(request):
+    objects = Products.objects.all()
+    context = {
+        'object': objects
+    }
+    return render(request, 'products/all_products.html', context)
+
+
 def product_deletion(request, my_id):
     obj = get_object_or_404(Products, id=my_id)
     if request.method == "POST":
@@ -80,7 +88,7 @@ def product_create_view(request):
 
 
 def product_detail_view(request):
-    obj = Products.objects.get(id=1)
+    obj = Products.objects.get(id=3)
     context = {
         'object': obj
     }

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <table>
+    {% for item in object %}
+        <tr>
+            <td>{{item.id}}</td>
+            <td>{{item.title}}</td>
+            <td>{{item.description}}</td>
+            <td>{{item.price}}</td>
+            <td><a href="{{item.absolute_url}}"> link </a> </td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}
