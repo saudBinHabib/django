@@ -3,6 +3,8 @@ from .models import Products
 
 
 class ProductForm(forms.ModelForm):
+    title = forms.CharField(label='', widget=forms.TextInput(attrs={'placeholder': 'Your Title'}))
+
     class Meta:
         model = Products
         fields = [
@@ -10,6 +12,13 @@ class ProductForm(forms.ModelForm):
             'description',
             'price'
         ]
+
+    def clean_title(self, *args, **kwargs):
+        title = self.cleaned_data.get('title')
+        if 'saud' in title:
+            return title
+        else:
+            raise forms.ValidationError('This is not a proper title.')
 
 
 class RawProductForm(forms.Form):
