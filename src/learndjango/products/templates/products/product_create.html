@@ -1,14 +1,14 @@
 {% extends "base.html"%}
 
 {% block content %}
-<!--
-    <h1>In the Products Application.</h1>
+ <h1>In the Products Application.</h1>
     <br />
     <form method="post"> {% csrf_token %}
         {{form.as_p}}
         <input type="submit" value="Save" />
     </form>
-    -->
+<!--
+
     <form method="post" action="."> {% csrf_token%}
         <input type="text" placeholder="this is an text" name="title" />
         <input type="submit" value="Save" />
@@ -16,5 +16,5 @@
     {% if title != None %}
         <p> {{title}}</p>
     {% endif %}
-
+-->
 {% endblock %}
