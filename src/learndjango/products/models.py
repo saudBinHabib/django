@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 # Create your models here.
@@ -9,4 +10,4 @@ class Products(models.Model):
     summary = models.TextField(default="this product is cool!")
 
     def absolute_url(self):
-        return f'/product/{self.id}'
+        return reverse('product_details', kwargs={'my_id': self.id})

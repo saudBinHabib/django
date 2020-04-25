@@ -21,10 +21,10 @@ from products.views import \
 
 urlpatterns = [
     path('', home_view),
-    path('product/<int:my_id>/', dynamic_product_lookup),
-    path('product/<int:my_id>/delete', product_deletion),
-    path('products', all_product_detail_view),
-    path('about/', about_view),
+    path('product/<int:my_id>/', dynamic_product_lookup, name='product_details'),
+    path('product/<int:my_id>/delete', product_deletion, name='product_delete'),
+    path('products', all_product_detail_view, name='all_products'),
+    path('about/', about_view, name='about'),
     path('admin/', admin.site.urls),
     path('create/', product_create_view),
     path('product/', product_detail_view),
