@@ -36,3 +36,18 @@ class ArticleCreateView(CreateView):
     def form_valid(self, form):
         print(form.cleaned_data)
         return super().form_valid(form)
+
+
+class ArticleUpdateView(UpdateView):
+    template_name = 'articles/article_create.html'
+    form_class = ArticleForm
+    # if you want to route the page to a specific page, not to the detail view then you can configure it here.
+    # success_url = '/blog/'
+
+    def get_object(self):
+        id_ = self.kwargs.get('id')
+        return get_object_or_404(Article, id=id_)
+
+    def form_valid(self, form):
+        print(form.cleaned_data)
+        return super().form_valid(form)
