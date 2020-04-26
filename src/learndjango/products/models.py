@@ -10,4 +10,4 @@ class Products(models.Model):
     summary = models.TextField(default="this product is cool!")
 
     def absolute_url(self):
-        return reverse('product_details', kwargs={'my_id': self.id})
+        return reverse('products:product_details', kwargs={'my_id': self.id})

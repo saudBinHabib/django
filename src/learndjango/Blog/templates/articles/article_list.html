@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <table border="2" cellpadding="5">
+    {% for item in object_list %}
+        <tr>
+            <td>{{item.id}}</td>
+            <td>{{item.title}}</td>
+            <td>{{item.content}}</td>
+            <td>{{item.active}}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}
