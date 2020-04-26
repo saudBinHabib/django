@@ -12,3 +12,8 @@ def home_view(request, *args, **kwargs):
 # Create your views here.
 def about_view(request, *args, **kwargs):
     return render(request, "about.html", {})
+
+
+# Create your views here.
+def contact_view(request, *args, **kwargs):
+    return render(request, "contact.html", {})
