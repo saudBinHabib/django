@@ -8,6 +8,7 @@
             <td>{{item.title}}</td>
             <td>{{item.content}}</td>
             <td>{{item.active}}</td>
+            <td><a href="{{item.get_absolute_url}}"> link </a> </td>
         </tr>
     {% endfor %}
     </table>
